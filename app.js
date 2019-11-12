@@ -1,6 +1,6 @@
 
 function main(){
-  
+
   window.onload = function (){
     fetch("superheroes.php")
   		.then(response => response.json())
@@ -36,22 +36,16 @@ function main(){
 			}else if(typeof data == "object"){
 
           result.innerHTML = ""
-
           let header = document.createElement("div")
-
           let alias = document.createElement("h2")
           alias.appendChild(document.createTextNode(data.alias))
-
           let name = document.createElement("h3")
           name.appendChild(document.createTextNode(data.name))
-
           let bio = document.createElement("p")
           bio.appendChild(document.createTextNode(data.biography))
-
           header.appendChild(alias)
           header.appendChild(name)
           header.appendChild(bio)
-
           result.appendChild(header);
 
 			}else{

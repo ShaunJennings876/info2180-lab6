@@ -60,8 +60,22 @@ $superheroes = [
       "name" => "Wanda Maximoff",
       "alias" => "Scarlett Witch",
       "biography" => "Notably powerful, Wanda Maximoff has fought both against and with the Avengers, attempting to hone her abilities and do what she believes is right to help the world.",
-  ], 
+  ],
 ];
+
+	foreach($superheroes as $s){
+		if($s["name"] == $_GET["query"] || $s["alias"] == $_GET["query"])
+			exit(json_encode($s));
+	}
+	exit(json_encode("Superhero not found"));
+}else{
+
+  $alias = array();
+  foreach($arr as $sh){
+    $alias[] = $sh["alias"];
+  }
+  exit(json_encode($alias));
+}
 
 ?>
 
